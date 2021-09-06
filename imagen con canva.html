@@ -1,0 +1,107 @@
+
+<html>
+<head>
+   <title>Canvas caminos circulares</title>
+   <link rel="stylesheet" type="text/css" href="android_css.css"/>
+<script>
+
+function cargaContextoCanvas(idCanvas){
+   var elemento = document.getElementById(idCanvas);
+   if(elemento && elemento.getContext){
+      var contexto = elemento.getContext('2d');
+      if(contexto){
+         return contexto;
+      }
+   }
+   return FALSE;
+}
+
+window.onload = function(){
+   
+   var android = cargaContextoCanvas('android');
+   if(android){
+      
+      
+      android.fillStyle="green";
+      android.beginPath();
+      android.arc(150,145,90,0, Math.PI*1, true);
+      android.closePath()
+      android.fill();
+      
+      
+      
+   
+      android.fillStyle="white";
+      android.beginPath();
+      android.arc(100,110,9,0, Math.PI*2, true);
+      android.closePath()
+      android.fill();
+      
+      android.fillStyle="#white";
+      android.beginPath();
+      android.arc(200,110,9,0, Math.PI*2, true);
+      android.closePath()
+      android.fill();
+
+      
+      android.beginPath();
+      android.lineCap = "round";
+      android.moveTo(130,120);
+      android.lineTo(80, 50);
+      android.strokeStyle = "green";
+      android.lineWidth = 8;
+      android.stroke();
+      
+      android.beginPath();
+      android.lineCap = "round";
+      android.moveTo(180,80);
+      android.lineTo(210, 50);
+      android.strokeStyle = "green";
+      android.lineWidth = 8;
+      android.stroke();
+   }
+
+
+}
+</script>
+</head>
+<body>
+<div id="contenedor">
+   <canvas id="android">
+   </canvas>
+   <div id="div_cuerpo">
+      <div class="mano" id="mano1">
+      </div>
+      <div id="cuerpo">
+      </div>
+      <div class="mano" id="mano2">
+      </div>
+   </div>
+   <div class="clear"></div>
+   <div id="div_pie">
+      <div id="pies">
+         <div class="pies" id="pie1">
+         </div>
+         <div class="pies" id="pie2">
+         </div>
+      </div>
+   </div>
+   
+   <div class="clear"></div>
+   <div id="patineta">
+      <div id="base">
+      </div>
+      <div class="rueda" id="rueda1">
+      </div>
+      <div class="rueda" id="rueda2">
+      </div>
+      
+   </div>
+   <div class="clear"></div>
+   <div id="autor">
+ 
+   </div>
+</div>
+
+</body>
+</html>
